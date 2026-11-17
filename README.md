@@ -2,6 +2,10 @@
 
 A simple countdown timer for Windows 11, built with WPF on .NET 10.
 
+![Egg Timer window showing 05:00 with minutes and seconds inputs, presets, Start/Pause/Reset buttons, warning-beeps option and volume slider](docs/screenshot.png)
+
+**[Download the latest EggTimer.exe](https://github.com/cvmccoy1/EggTimer/releases/latest)**. It's a single file that runs without .NET installed.
+
 ## Features
 - You set the time with Minutes (0–99) and Seconds (0–59) spin boxes, or with the 1, 3, 5 and 10 minute preset buttons.
 - **Start** runs a 5-second "get ready" lead-in, then the countdown. **Pause/Resume** works during both. **Reset** stops the timer and goes back to the set time.
