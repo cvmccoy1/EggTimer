@@ -6,6 +6,9 @@
         SizeToContent="WidthAndHeight"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
+        Background="{StaticResource EggBackgroundBrush}"
+        Foreground="{StaticResource EggForegroundBrush}"
+        Icon="Assets/EggTimer.ico"
         Closing="Window_Closing">
 
     <Window.TaskbarItemInfo>
@@ -40,6 +43,7 @@
                    FontSize="80"
                    Typography.NumeralAlignment="Tabular"
                    Margin="0,-8,0,8"
+                   Foreground="{StaticResource EggForegroundBrush}"
                    Text="05:00" />
 
         <!-- Time inputs -->
@@ -88,6 +92,7 @@
                     SmallChange="5" LargeChange="10"
                     IsSnapToTickEnabled="True" TickFrequency="1"
                     VerticalAlignment="Center"
+                    Foreground="{StaticResource EggAccentBrush}"
                     ValueChanged="Volume_ValueChanged" />
             <TextBlock x:Name="VolumeText" Grid.Column="2"
                        VerticalAlignment="Center" HorizontalAlignment="Right"

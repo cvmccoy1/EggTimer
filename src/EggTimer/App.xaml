@@ -1,6 +1,43 @@
 <Application x:Class="EggTimer.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             ThemeMode="System">
-    <Application.Resources />
+             ThemeMode="Dark">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Egg Timer palette: charcoal background with an amber "yolk" accent. -->
+            <Color x:Key="EggBackgroundColor">#FF1B1E24</Color>
+            <Color x:Key="EggForegroundColor">#FFF3EEE4</Color>
+            <Color x:Key="EggAccentColor">#FFFFB547</Color>
+
+            <SolidColorBrush x:Key="EggBackgroundBrush" Color="{StaticResource EggBackgroundColor}" />
+            <SolidColorBrush x:Key="EggForegroundBrush" Color="{StaticResource EggForegroundColor}" />
+            <SolidColorBrush x:Key="EggAccentBrush" Color="{StaticResource EggAccentColor}" />
+
+            <!-- General Fluent accent overrides (picked up where the theme looks them up dynamically). -->
+            <Color x:Key="SystemAccentColor">#FFFFB547</Color>
+            <Color x:Key="SystemAccentColorLight1">#FFFFC66E</Color>
+            <Color x:Key="SystemAccentColorLight2">#FFFFB547</Color>
+            <Color x:Key="SystemAccentColorLight3">#FFFFE2B0</Color>
+            <Color x:Key="SystemAccentColorDark1">#FFE09A2E</Color>
+            <Color x:Key="SystemAccentColorDark2">#FFB87A1C</Color>
+            <Color x:Key="SystemAccentColorDark3">#FF8A5A10</Color>
+            <SolidColorBrush x:Key="AccentFillColorDefaultBrush" Color="#FFFFB547" />
+            <SolidColorBrush x:Key="AccentFillColorSecondaryBrush" Color="#E6FFB547" />
+            <SolidColorBrush x:Key="AccentFillColorTertiaryBrush" Color="#CCFFB547" />
+            <SolidColorBrush x:Key="AccentTextFillColorPrimaryBrush" Color="#FFFFC66E" />
+            <SolidColorBrush x:Key="TextOnAccentFillColorPrimaryBrush" Color="#FF1B1E24" />
+
+            <!-- Control-level Fluent keys (looked up dynamically by the templates). -->
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked" Color="#FFFFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" Color="#E6FFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed" Color="#CCFFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked" Color="#FFFFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" Color="#E6FFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" Color="#CCFFB547" />
+            <SolidColorBrush x:Key="CheckBoxCheckGlyphForeground" Color="#FF1B1E24" />
+            <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundPressed" Color="#FF1B1E24" />
+            <SolidColorBrush x:Key="SliderThumbBackground" Color="#FFFFB547" />
+            <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver" Color="#FFFFC66E" />
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

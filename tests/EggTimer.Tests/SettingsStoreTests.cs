@@ -61,7 +61,7 @@ public sealed class SettingsStoreTests : IDisposable
     [Fact]
     public void Generated_sounds_are_valid_wav()
     {
-        foreach (var wav in new[] { SoundService.BuildBeep(0.5), SoundService.BuildAlarm(0.5) })
+        foreach (var wav in new[] { SoundService.BuildBeep(0.5), SoundService.BuildDoubleBeep(0.5), SoundService.BuildAlarm(0.5) })
         {
             Assert.Equal("RIFF"u8.ToArray(), wav[..4]);
             Assert.Equal("WAVE"u8.ToArray(), wav[8..12]);

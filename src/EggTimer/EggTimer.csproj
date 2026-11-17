@@ -16,6 +16,14 @@
     <NoWarn>$(NoWarn);WPF0001</NoWarn>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <ApplicationIcon>Assets\EggTimer.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\EggTimer.ico" />
+  </ItemGroup>
+
   <ItemGroup>
     <InternalsVisibleTo Include="EggTimer.Tests" />
   </ItemGroup>

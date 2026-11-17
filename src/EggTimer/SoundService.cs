@@ -17,6 +17,9 @@ public sealed class SoundService : IDisposable
     /// <summary>Short beep used for the 3-2-1 warnings.</summary>
     public void PlayBeep(int volumePercent) => Play("beep", volumePercent, BuildBeep);
 
+    /// <summary>Higher-pitched double beep signalling that the main countdown has begun.</summary>
+    public void PlayDoubleBeep(int volumePercent) => Play("double", volumePercent, BuildDoubleBeep);
+
     /// <summary>Rising four-note chime played once when the timer reaches zero.</summary>
     public void PlayAlarm(int volumePercent) => Play("alarm", volumePercent, BuildAlarm);
 
@@ -65,6 +68,15 @@ public sealed class SoundService : IDisposable
         return ToWav(samples);
     }
 
+    internal static byte[] BuildDoubleBeep(double amplitude)
+    {
+        var samples = new List<short>();
+        AppendTone(samples, 1320, 0.10, amplitude * 0.9, decay: false);
+        AppendSilence(samples, 0.07);
+        AppendTone(samples, 1320, 0.10, amplitude * 0.9, decay: false);
+        return ToWav(samples);
+    }
+
     internal static byte[] BuildAlarm(double amplitude)
     {
         var samples = new List<short>();
@@ -93,6 +105,9 @@ public sealed class SoundService : IDisposable
             samples.Add((short)Math.Clamp(v * env * amplitude * short.MaxValue, short.MinValue, short.MaxValue));
         }
     }
+
+    private static void AppendSilence(List<short> samples, double seconds)
+        => samples.AddRange(Enumerable.Repeat((short)0, (int)(SampleRate * seconds)));
 
     private static byte[] ToWav(List<short> samples)
     {

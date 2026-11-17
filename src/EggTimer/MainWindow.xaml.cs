@@ -57,6 +57,10 @@ public partial class MainWindow : Window
         {
             if (WarningBeepsCheck.IsChecked == true) _sound.PlayBeep(Volume);
         };
+        _engine.LeadInCompleted += () =>
+        {
+            if (WarningBeepsCheck.IsChecked == true) _sound.PlayDoubleBeep(Volume);
+        };
         _engine.Finished += OnFinished;
         _engine.StateChanged += RefreshAll;
 
@@ -215,9 +219,7 @@ public partial class MainWindow : Window
             ? Math.Clamp(1.0 - remaining / _engine.Duration, 0.0, 1.0)
             : 0.0;
 
-    private Brush AccentBrush() =>
-        TryFindResource("AccentTextFillColorPrimaryBrush") as Brush
-        ?? new SolidColorBrush(SystemParameters.WindowGlassColor);
+    private Brush AccentBrush() => (Brush)FindResource("EggAccentBrush");
 
     // ----- Settings & window position -----
 
